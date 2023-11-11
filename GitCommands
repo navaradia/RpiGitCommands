@@ -1,0 +1,85 @@
+ls - list
+cd /home/pi/ ...
+pwd - kilistazza az elérési utat (az aktuális helyen)
+mkdir "folderName" -adott névvel hoz létre egy mappát
+
+
+git config --global user.name "navaradia"
+git config --global user.email "varjubandi9309@gmail.com"
+git config --global init.default branch main
+
+cd /home/pi/ ...  - ezzel kell betallózni a projektet
+git init 	-ezzel kezdődik a git
+git status	- ez kiadja hogy a választott mappában mi a statusz
+git add "fileName"	-ez hozzáadja a az adott file-t a "git-hez"
+git add --all 		- az összes file-t trackelni fogja	
+	git add .	- ugyanaz mint az --all
+ 
+git rm --cached "fileName"
+
+***------------------------***
+#gitignore
+# az adott mappába létre kell hozni egy ".gitignore" nevű file-t
+*.txt // az összes txt file-t ignorálni fogja
+"fileName" vagy egy adott file-t adunk meg
+"Folder/" vagy mappát
+egyébként a git status-szal lehet ellenőrizni hogy mit lát a git
+***------------------------***
+
+git commit -m "comment"
+git restore staged --fileName	-"fileName" a kivonni kívánt file neve
+git log				- megmutatja hogy milyen logok voltak eddig
+git restore "fileName"		- a repository-ból tölti vissza a file-t
+git mv "fileCurrentName" "fileNewerName"	- git átnevezés (utána lehet commit-elni
+git log -p 			- kiírja a változásokat
+git reset "#commit number"	- elvileg ezzel lehetne visszaállítani a verziót
+
+
+
+///------------------------///
+***------------------------***
+Egy standard Git-elés:
+1. Hozd létre a mappát
+2. tallózd be a Cmd-val a mappát
+3. git init
+4. git add --all
+5. git commit -m "comment"
+
+a 4-es és 5-ös pontot kell megismételni ha változtatsz
+***------------------------***
+///------------------------///
+
+Git push a weboldalra (	Amikor létrehozod a Github-on a projektet 
+			akkor kiírja hogy mit kell csinálni)
+			"...or create a new repository on the command line"
+echo "# "
+git add README.md
+	Itt kellett csinálni egy 
+		git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin 'weboldalcíme'
+git push -u origin main
+	Megkérdezi a felhasználót: navaradia
+	Illetve kéria jelszót is:
+		Github/Settings/Developer Settings/Personal access tokens
+			Itt van egyébként egy "Generate new token" -> Classic
+				Select scopes (válaszd ki az összeset) -> Generate token (alul)
+
+	Felhasználó: navaradia
+Jelenlegi token: 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
+///------------------------///
+Példa:	(érdemes soronként végig menni rajta)
+	///echo "# RpiGitCommands" >> README.md
+		Ez nem kell!!!
+	git init
+	git add README.md
+		ez után "git add ."
+	git commit -m "first commit"
+	git branch -M main
+	git remote add origin https://github.com/navaradia/RpiGitCommands.git
+	git push -u origin main
+
+	Felhasználó: navaradia
+	Jelenlegi token: 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
+
